@@ -8,9 +8,9 @@ class Solution(object):
         for i in range(len(num)-2):
             if num[i] == num[i+1] == num[i+2]:
                 result = max(result, int(num[i]))
+            
         if result == -1:
             return ""
         else:
-            return str(result) * 3
-        
+            return str(result)*3
         
