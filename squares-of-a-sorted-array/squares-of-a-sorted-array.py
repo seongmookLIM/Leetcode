@@ -5,9 +5,19 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        for i in range(0, len(nums)):
-            nums[i] = nums[i]*nums[i]
-        nums.sort()
+        answer = [0]*len(nums)
+
+        l = 0
+        r = len(nums)-1
+        while l<=r:
+            left = abs(nums[l])
+            right = abs(nums[r])
+            if left>right:
+                answer[r-l] = left*left
+                l+=1
+            else:
+                answer[r-l] = right*right
+                r-=1
             
-        return nums
+        return answer
         
